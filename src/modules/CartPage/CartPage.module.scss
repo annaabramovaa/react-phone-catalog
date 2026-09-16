@@ -35,9 +35,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 16px;
 }
 
 .cart_empty_title {
+  margin: 0;
   font-family: Mont-Regular, sans-serif;
   font-size: 22px;
   line-height: 21px;
@@ -46,8 +48,10 @@
 }
 
 .cart_empty_img {
-  width: 350px;
-  height: 300px;
+  width: auto;
+  max-width: 100%;
+  height: clamp(160px, calc(100vh - 510px), 300px);
+  object-fit: contain;
 }
 
 .cart_list {

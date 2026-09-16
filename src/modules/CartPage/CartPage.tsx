@@ -19,7 +19,7 @@ export const CartPage = () => {
   return (
     <>
       <div className={styles.cart}>
-        <BackBtn />
+        <BackBtn to="/" />
         <h1 className={styles.cart_header}>Cart</h1>
 
         <div className={styles.cart_content}>

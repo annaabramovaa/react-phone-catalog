@@ -188,7 +188,7 @@ export const ProductDetailsPage = () => {
   return (
     <div>
       <BreadCrumbs productName={productName} />
-      <BackBtn />
+      <BackBtn to={`/${category}`} />
       <h2 className={styles.productPage__title}>{productName}</h2>
 
       <div className={styles.productPage_spec}>
