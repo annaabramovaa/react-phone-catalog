@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Product } from '../../../../types/Product';
 import { ProductsSlider } from '../ProductsSlider/ProductsSlider';
+import { getApiUrl } from '../../../../utils/apiUrl';
 
 export const BrandNew = () => {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    fetch('/react_phone-catalog/api/products.json')
+    fetch(getApiUrl('api/products.json'))
       .then(res => res.json())
       .then(setAllProducts);
   }, []);

@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import styles from './ProductPhotos.module.scss';
+import { getApiUrl } from '../../utils/apiUrl';
 
 type Props = {
   images: string[];
@@ -52,7 +53,7 @@ export const ProductPhotos: React.FC<Props> = ({ images }) => {
     <div className={styles.photos}>
       <div className={styles.photos_main} ref={sliderRef}>
         {images.map((img, index) => {
-          const imgUrl = import.meta.env.BASE_URL + img;
+          const imgUrl = getApiUrl(img);
 
           return (
             <div key={img} className={styles.photos_slide}>
@@ -69,8 +70,7 @@ export const ProductPhotos: React.FC<Props> = ({ images }) => {
       <div className={styles.photos_previews}>
         {images.map((img, index) => {
           const isActive = index === activeIndex;
-          const imgUrl =
-            'https://annaabramovaa.github.io/react-phone-catalog/' + img;
+          const imgUrl = getApiUrl(img);
 
           return (
             <button

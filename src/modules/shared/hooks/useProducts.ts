@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Product } from '../../../types/Product';
+import { getApiUrl } from '../../../utils/apiUrl';
 
 export const useProducts = (category: 'phones' | 'tablets' | 'accessories') => {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
@@ -52,9 +53,7 @@ export const useProducts = (category: 'phones' | 'tablets' | 'accessories') => {
         setError(false);
 
         const startTime = Date.now();
-        const response = await fetch(
-          `${import.meta.env.BASE_URL}api/products.json`,
-        );
+        const response = await fetch(getApiUrl('api/products.json'));
 
         if (!response.ok) {
           throw new Error('Failed to fetch products');

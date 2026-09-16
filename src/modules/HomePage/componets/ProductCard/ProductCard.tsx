@@ -6,6 +6,7 @@ import styles from './ProductCard.module.scss';
 import favIcon from '/icons/fav-icon.png';
 import favActIcon from '/icons/favorite-active-icon.png';
 import { Product } from '../../../../types/Product';
+import { getApiUrl } from '../../../../utils/apiUrl';
 
 type Props = {
   product: Product;
@@ -29,7 +30,7 @@ export const ProductCard: React.FC<Props> = ({
   const { toggleFavorite, isFavorite } = useFavorites();
   const isFav = isFavorite(product);
 
-  const imgUrl = import.meta.env.BASE_URL + product.image;
+  const imgUrl = getApiUrl(product.image);
 
   return (
     <div className={styles.card}>

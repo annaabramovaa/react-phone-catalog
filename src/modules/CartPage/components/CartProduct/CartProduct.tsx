@@ -5,6 +5,7 @@ import removeBtn from '/icons/close-icon.png';
 import plusIcon from '/icons/plus-icon.png';
 import minusIcon from '/icons/minus-active-icon.png';
 import minusIconDisabled from '/icons/minus-icon.png';
+import { getApiUrl } from '../../../../utils/apiUrl';
 
 type Props = {
   item: CartItem;
@@ -31,8 +32,7 @@ export const CartProduct: React.FC<Props> = ({ item }) => {
     });
   };
 
-  const imgUrl =
-    'https://annaabramovaa.github.io/react_phone-catalog/' + item.product.image;
+  const imgUrl = getApiUrl(item.product.image);
 
   return (
     <div className={styles.cart_product}>

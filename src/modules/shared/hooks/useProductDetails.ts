@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ProductDetails } from '../../../types/ProductDetails';
+import { getApiUrl } from '../../../utils/apiUrl';
 
 export const useProductDetails = (
   productId: string | undefined,
@@ -43,8 +44,8 @@ export const useProductDetails = (
 
       try {
         const [detailsRes, productsRes] = await Promise.all([
-          fetch(`${import.meta.env.BASE_URL}api/${category}.json`),
-          fetch(`${import.meta.env.BASE_URL}api/products.json`),
+          fetch(getApiUrl(`api/${category}.json`)),
+          fetch(getApiUrl('api/products.json')),
         ]);
 
         const detailsData: ProductDetails[] = await detailsRes.json();
