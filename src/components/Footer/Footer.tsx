@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
             </li>
             <li className={styles.footer_nav_item}>
               <a
-                href="https://github.com/annaabramovaa"
+                href="https://www.linkedin.com/in/anna-abramova-4057731b1/"
                 className={styles.footer_nav}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
             </li>
             <li className={styles.footer_nav_item}>
               <a
-                href="https://github.com/annaabramovaa"
+                href="https://www.codewars.com/users/abramovaana193@gmail.com"
                 className={styles.footer_nav}
                 target="_blank"
                 rel="noopener noreferrer"
