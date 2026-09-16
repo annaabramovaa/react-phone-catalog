@@ -52,7 +52,9 @@ export const useProducts = (category: 'phones' | 'tablets' | 'accessories') => {
         setError(false);
 
         const startTime = Date.now();
-        const response = await fetch('/react_phone-catalog/api/products.json');
+        const response = await fetch(
+          `${import.meta.env.BASE_URL}api/products.json`,
+        );
 
         if (!response.ok) {
           throw new Error('Failed to fetch products');

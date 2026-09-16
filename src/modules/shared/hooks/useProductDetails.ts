@@ -43,8 +43,8 @@ export const useProductDetails = (
 
       try {
         const [detailsRes, productsRes] = await Promise.all([
-          fetch(`/react_phone-catalog/api/${category}.json`),
-          fetch(`/react_phone-catalog/api/products.json`),
+          fetch(`${import.meta.env.BASE_URL}api/${category}.json`),
+          fetch(`${import.meta.env.BASE_URL}api/products.json`),
         ]);
 
         const detailsData: ProductDetails[] = await detailsRes.json();

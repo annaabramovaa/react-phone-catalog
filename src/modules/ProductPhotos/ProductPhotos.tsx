@@ -52,8 +52,7 @@ export const ProductPhotos: React.FC<Props> = ({ images }) => {
     <div className={styles.photos}>
       <div className={styles.photos_main} ref={sliderRef}>
         {images.map((img, index) => {
-          const imgUrl =
-            'https://annaabramovaa.github.io/react_phone-catalog/' + img;
+          const imgUrl = import.meta.env.BASE_URL + img;
 
           return (
             <div key={img} className={styles.photos_slide}>
@@ -71,7 +70,7 @@ export const ProductPhotos: React.FC<Props> = ({ images }) => {
         {images.map((img, index) => {
           const isActive = index === activeIndex;
           const imgUrl =
-            'https://annaabramovaa.github.io/react_phone-catalog/' + img;
+            'https://annaabramovaa.github.io/react-phone-catalog/' + img;
 
           return (
             <button
